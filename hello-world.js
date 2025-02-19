@@ -6,3 +6,8 @@ var b = 20;
 let result = a + b;
 
 console.log(result);
+
+var name = "thiago";
+var supername = "ribeiro";
+
+console.log(name + " " + supername);
