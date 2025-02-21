@@ -11,3 +11,10 @@ var name = "thiago";
 var supername = "ribeiro";
 
 console.log(name + " " + supername);
+
+var number1 = 15;
+var number2 = 15;
+
+let result3 = number1 * number2;
+
+console.log(result3);
