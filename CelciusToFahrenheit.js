@@ -11,3 +11,7 @@ function FahrenheitToCelcius(f) {
 console.log(
   `Conversão de Fahrenheit para Celcius: ` + FahrenheitToCelcius(86) + `° graus`
 );
+
+var name = "thiago";
+var sobrenome = "nome";
+console.log(`${name} ${sobrenome}`);
