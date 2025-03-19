@@ -15,3 +15,10 @@ console.log(
 var name = "thiago";
 var sobrenome = "nome";
 console.log(`${name} ${sobrenome}`);
+
+function FahrenheitToCelcius(f) {
+  return ((f - 32) * 5) / 9;
+}
+console.log(
+  `Conversão de Fahrenheit para Celcius: ` + FahrenheitToCelcius(86) + `° graus`
+);
