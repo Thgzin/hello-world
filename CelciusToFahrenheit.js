@@ -22,3 +22,11 @@ function FahrenheitToCelcius(f) {
 console.log(
   `Conversão de Fahrenheit para Celcius: ` + FahrenheitToCelcius(86) + `° graus`
 );
+
+
+function FahrenheitToCelcius(f) {
+  return ((f - 32) * 5) / 9;
+}
+console.log(
+  `Conversão de Fahrenheit para Celcius: ` + FahrenheitToCelcius(86) + `° graus`
+);
