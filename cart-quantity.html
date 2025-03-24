@@ -16,22 +16,53 @@
     </button>
 
     <button
-      onclick="cartQuantity = cartQuantity  + 1; console.log(`Cart Quantity: ${cartQuantity}`) "
+      onclick="cartQuantity +=1; console.log(`Cart Quantity: ${cartQuantity}`) "
     >
       Add to Cart
     </button>
 
     <button
-      onclick="cartQuantity = cartQuantity + 2; console.log(`Cart Quantity: ${cartQuantity}`) "
+      onclick="cartQuantity +=2; console.log(`Cart Quantity: ${cartQuantity}`) "
     >
       +2
     </button>
 
     <button
-      onclick="cartQuantity = cartQuantity + 3; console.log(`Cart Quantity: ${cartQuantity}`) "
+      onclick="cartQuantity +=3; console.log(`Cart Quantity: ${cartQuantity}`) "
     >
       +3
     </button>
+
+    <button
+      onclick="cartQuantity +=4; console.log(`Cart Quantity: ${cartQuantity}`) "
+    >
+      +4
+    </button>
+
+    <button
+      onclick="cartQuantity +=5; console.log(`Cart Quantity: ${cartQuantity}`) "
+    >
+      +5
+    </button>
+
+    <button
+      onclick="cartQuantity -=2; console.log(`Cart Quantity: ${cartQuantity}`) "
+    >
+      -2
+    </button>
+
+    <button
+      onclick="cartQuantity -=3; console.log(`Cart Quantity: ${cartQuantity}`) "
+    >
+      -3
+    </button>
+
+    <button
+      onclick="cartQuantity -=1; console.log(`Cart Quantity: ${cartQuantity}`) "
+    >
+      Remove from cart
+    </button>
+
     <button
       onclick=" cartQuantity = 0; console.log('Cart Was Reset.'); console.log(`Cart Quantity: ${cartQuantity}`)  "
     >
@@ -42,4 +73,3 @@
     </script>
   </body>
 </html>
-
