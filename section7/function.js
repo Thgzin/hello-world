@@ -1,6 +1,6 @@
-function helloWorld(hello) {
-  hello = "hello world";
-  return hello;
+function helloWorld(helloMessage) {
+  helloMessage = "hello world!!!!";
+  return helloMessage;
 }
 
 console.log(helloWorld());
