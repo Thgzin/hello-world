@@ -7,11 +7,12 @@
   </head>
   <body>
     <script>
-      function function1() {
-        console.log("hello");
+      function function1(helloMessage) {
+        helloMessage = "hello world!";
+        return helloMessage;
       }
 
-      function1();
+      console.log(function1());
     </script>
   </body>
 </html>
