@@ -16,16 +16,12 @@
 
     console.log(function1());
 
-    function calculateTax(cost) {
-      console.log(cost * 0.1);
+    function calculateTax(cost, taxPercent = 0.1) {
+      return cost * taxPercent;
     }
-    calculateTax("2000");
+    console.log(calculateTax(3000));
 
-    function calculateTax2(cost2) {
-      return cost2 * 0.1;
-    }
-    console.log(calculateTax2(3000))
-
+  
   </script>
 </body>
 
