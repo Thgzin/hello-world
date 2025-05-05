@@ -19,10 +19,20 @@
 
         }
 
-        console.log(convertToFahrenheit(25))
 
-        console.log(convertToCelcius(86))
+        function convertTemperature(degrees, unit) {
+            const celcius = convertToCelcius(degrees)
+            const fahrenheit = convertToFahrenheit(degrees)
 
+            if (unit === 'C') {
+                return fahrenheit
+            } else if (unit === 'F') {
+                return celcius
+            }
+
+        }
+        console.log(`${convertTemperature(25, 'C')}F`)
+        console.log(`${convertTemperature(86, 'F')}C`)
     </script>
 
 </body>
