@@ -12,14 +12,37 @@
 
         function convertLength(length, from, to) {
             let unit = ''
+
+            if (from === 'km' && to === 'km') {
+                return unit = length
+            }
+            if (from === 'miles' && to === 'miles') {
+                return unit = length
+            }
+            if (from === 'ft' && to === 'ft') {
+                return unit = length
+            }
+
             if (from === 'miles' && to === 'km') {
                 return unit = length * 1.609
             } else if (from === 'km' && to === 'miles') {
                 return unit = length / 1.609
             }
+            else if (from === 'miles' && to === 'ft') {
+                return unit = length * 5280
+            }
+            else if (from === 'km' && to === 'ft') {
+                return unit = length * 3281
+            }
+
+            if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+                return `Invalid unit: ${from}`
+            } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+                return `Invalid unit: ${to}`
+            }
+
         }
-        console.log(Math.round(convertLength(50, 'miles', 'km')))
-        console.log(Math.round(convertLength(32, 'km', 'miles')))
+        console.log(convertLength(25, 'lp', 'km'))
     </script>
 
 </body>
