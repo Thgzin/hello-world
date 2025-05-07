@@ -25,6 +25,33 @@
         delete products.newProduct
         console.log(products)
 
+        // Exemplo 1: this em um objeto
+        const person = {
+            name: "João",
+            age: 25,
+            sayHello: function () {
+                console.log("Olá, meu nome é " + this.name);
+            }
+        };
+
+        person.sayHello(); // Vai imprimir: "Olá, meu nome é João"
+
+        // Exemplo 2: this em uma função normal
+        function testThis() {
+            console.log(this); // Vai imprimir o objeto window
+        }
+        testThis();
+
+        // Exemplo 3: this em um construtor
+        function Car(brand) {
+            this.brand = brand;
+            this.getBrand = function () {
+                return this.brand;
+            }
+        }
+
+        const myCar = new Car("Toyota");
+        console.log(myCar.getBrand()); // Vai imprimir: "Toyota"
     </script>
 </body>
 
