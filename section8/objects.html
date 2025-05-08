@@ -9,49 +9,40 @@
 
 <body>
     <script>
+        /*   const products = {
+               name: "socks",
+               price: 1090
+           }
+           console.log(products)
+           console.log(products.name)
+   
+           products.name = "cotton socks";
+           console.log(products)
+   
+           products.newProduct = true
+           console.log(products)
+   
+           delete products.newProduct
+           console.log(products)
+           */
+
         const products = {
             name: "socks",
-            price: 1090
+            'delivery-time': "1 day",
+            rating: {
+                starts: 4.5,
+                count: 250
+            },
+            fun: function functionName() {
+                console.log('function inside an object')
+            }
         }
-        console.log(products)
+
+
         console.log(products.name)
-
-        products.name = "cotton socks";
-        console.log(products)
-
-        products.newProduct = true
-        console.log(products)
-
-        delete products.newProduct
-        console.log(products)
-
-        // Exemplo 1: this em um objeto
-        const person = {
-            name: "João",
-            age: 25,
-            sayHello: function () {
-                console.log("Olá, meu nome é " + this.name);
-            }
-        };
-
-        person.sayHello(); // Vai imprimir: "Olá, meu nome é João"
-
-        // Exemplo 2: this em uma função normal
-        function testThis() {
-            console.log(this); // Vai imprimir o objeto window
-        }
-        testThis();
-
-        // Exemplo 3: this em um construtor
-        function Car(brand) {
-            this.brand = brand;
-            this.getBrand = function () {
-                return this.brand;
-            }
-        }
-
-        const myCar = new Car("Toyota");
-        console.log(myCar.getBrand()); // Vai imprimir: "Toyota"
+        console.log(products['delivery-time'])
+        console.log(products.rating.count)
+        products.fun()
     </script>
 </body>
 
