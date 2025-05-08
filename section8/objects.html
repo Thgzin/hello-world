@@ -26,31 +26,59 @@
            console.log(products)
            */
 
- /*       const products = {
-            name: "socks",
-            'delivery-time': "1 day",
-            rating: {
-                starts: 4.5,
-                count: 250
-            },
-            fun: function functionName() {
-                console.log('function inside an object')
+        /*       const products = {
+                   name: "socks",
+                   'delivery-time': "1 day",
+                   rating: {
+                       starts: 4.5,
+                       count: 250
+                   },
+                   fun: function functionName() {
+                       console.log('function inside an object')
+                   }
+               }
+       
+       
+               console.log(products.name)
+               console.log(products['delivery-time'])
+               console.log(products.rating.count)
+               products.fun()
+       
+               console.log(JSON.stringify(products))
+       
+               const jsonString = JSON.stringify(products)
+               console.log(JSON.parse(jsonString)) 
+       */
+        /* 
+        console.log('hello'.length)
+         console.log('hello'.toUpperCase())
+     
+         */
+
+        const obj4 = {
+            message: 'hello',
+            price: 799
+        }
+
+        const { message, price } = obj4
+        console.log(message)
+        console.log(price)
+
+        const obj5 = {
+            //  message: message
+            message,
+            // method: function function1() {
+            //    console.log('method')
+            //}
+            method() {
+                console.log('method')
             }
         }
 
+        console.log(obj5)
+        obj5.method()
 
-        console.log(products.name)
-        console.log(products['delivery-time'])
-        console.log(products.rating.count)
-        products.fun()
 
-        console.log(JSON.stringify(products))
-
-        const jsonString = JSON.stringify(products)
-        console.log(JSON.parse(jsonString)) 
-*/
-
-        
     </script>
 </body>
 
