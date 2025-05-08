@@ -18,7 +18,7 @@
       console.log(product);
       */
 
-    /*  function comparePrice(product1, product2) {
+      /*  function comparePrice(product1, product2) {
         product1 = {
           name: "Product1Price",
           price: 50,
@@ -38,6 +38,32 @@
       console.log(comparePrice());
 
       */
+
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      const product1 = {
+        name: "sameName2",
+        price: 100,
+      };
+
+      const product2 = {
+        name: "sameName2",
+        price: 1005,
+      };
+
+      const objReference1 = product1;
+      const objReference2 = product2;
+      
+      console.log(isSameProduct(objReference1, objReference2));
     </script>
   </body>
 </html>
