@@ -36,7 +36,8 @@
           localStorage.removeItem("score");
 
         updateScoreElement();
-        alert("score reseted!");
+        document.querySelector(".js-result").innerHTML = "";
+        document.querySelector(".js-moves").innerHTML = "";
       }
 
       function playGame(playerMove) {
@@ -77,7 +78,7 @@
 
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
       Wins: ${score.wins}, Losses: ${score.losses}, ties: ${score.ties}`);
-      
+
         updateScoreElement();
         updateResult(result);
         updateMove(playerMove, computerMove);
