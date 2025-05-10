@@ -7,17 +7,21 @@
   </head>
   <body>
     <button>hello</button>
+    <button class="js-button">sec button</button>
 
     <script>
-      console.log(document.querySelector("button").innerHTML);
-      document.querySelector("button").onclick = function () {
+      const buttonElement = document.querySelector(".js-button");
+      buttonElement.innerHTML = "good job";
+      buttonElement.style.border = "1px solid red";
+      console.log(buttonElement);
+      buttonElement.onclick = function () {
         console.log("clicked");
       };
       /*
       console.log(document.body);
       document.body.innerHTML = "<button>Good Job </button>";
       document.body.style.border = "1px solid green";
-      
+
       document.body.innerHTML = "Hello";
       document.title = "DOM";
       */
