@@ -10,7 +10,14 @@
     <p>Order under 40$ = $10 shipping</p>
     <p>Order over $40 = FREE shipping</p>
 
-    <input type="number" placeholder="Cost of order" class="js-cost-input" />
+    <input
+      type="number"
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="if(event.key === 'Enter'){
+      calculateShipping(), verifyInput()
+    }"
+    />
 
     <button class="js-calculate-button" onclick="calculateShipping()">
       Calculate
@@ -29,6 +36,13 @@
           shippingCost.innerHTML = "$" + total;
         } else {
           shippingCost.innerHTML = "$" + costInput.value;
+        }
+      }
+      function verifyInput() {
+        const costInput = document.querySelector(".js-cost-input");
+        const shippingCost = document.querySelector(".js-shipping-cost");
+        if (costInput.value === "" || costInput.value <= 0) {
+          shippingCost.innerHTML = "Please enter a value";
         }
       }
     </script>
