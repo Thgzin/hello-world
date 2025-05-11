@@ -14,9 +14,7 @@
       type="number"
       placeholder="Cost of order"
       class="js-cost-input"
-      onkeydown="if(event.key === 'Enter'){
-      calculateShipping(), verifyInput()
-    }"
+      onkeydown="handleKeydown(event)"
     />
 
     <button class="js-calculate-button" onclick="calculateShipping()">
@@ -38,6 +36,13 @@
           shippingCost.innerHTML = "$" + costInput.value;
         }
       }
+
+      function handleKeydown(event) {
+        if (event.key === "Enter") {
+          calculateShipping(), verifyInput();
+        }
+      }
+
       function verifyInput() {
         const costInput = document.querySelector(".js-cost-input");
         const shippingCost = document.querySelector(".js-shipping-cost");
