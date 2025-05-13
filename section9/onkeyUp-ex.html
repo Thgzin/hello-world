@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="name" class="Input-name" onkeyup="handleClick(event)"">
+  <button class=" btn-submit" onclick="submitName()" ">Submit</button>
+  <p class=" result"></p>
+    <script>
+        const inputName = document.querySelector('.Input-name')
+        const result = document.querySelector('.result')
+
+        inputName.addEventListener('keyup', function submitName() {
+            result.innerHTML = `Your name is: ${inputName.value}`
+            verifyInput()
+        })
+
+        function handleClick(event) {
+            if (event.key === "Enter") {
+                submitName()
+                verifyInput()
+            }
+        }
+
+        function verifyInput() {
+            if (inputName.value === '') {
+                result.innerHTML = ""
+            }
+        }
+
+    </script>
+
+</html>
