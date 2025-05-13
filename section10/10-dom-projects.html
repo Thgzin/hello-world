@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM projects</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        justify-content: center;
+      }
+      .subscribe-button {
+        background-color: black;
+        border: none;
+        padding: 0.7rem;
+        border-radius: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 300ms linear;
+      }
+
+      .isSubscribed {
+        background-color: rgb(87, 88, 88);
+      }
+      .isNotSubscribed {
+        background-color: black;
+      }
+
+      .calculate-button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button
+      class="js-subscribe-button subscribe-button"
+      onclick="toggleSubscribeButton()"
+    >
+      Subscribe
+    </button>
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under 40$ = $10 shipping</p>
+    <p>Order over $40 = FREE shipping</p>
+
+    <input type="number" placeholder="Cost of order" />
+    <button class="calculate-button">Calculate</button>
+    <script>
+      function toggleSubscribeButton() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+          buttonElement.classList.add("isSubscribed");
+          buttonElement.classList.remove("isNotSubscribed");
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+          buttonElement.classList.remove("isSubscribed");
+          buttonElement.classList.add("isNotSubscribed");
+        }
+      }
+    </script>
+  </body>
+</html>
