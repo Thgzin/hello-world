@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM projects</title>
+  </head>
+  <body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under 40$ = $10 shipping</p>
+    <p>Order over $40 = FREE shipping</p>
+
+    <input
+      type="number"
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="handleKeydown(event)"
+    />
+
+    <button class="js-calculate-button" onclick="calculateShipping()">
+      Calculate
+    </button>
+
+    <p class="js-shipping-cost"></p>
+
+    <script>
+      function calculateShipping() {
+        const costInput = document.querySelector(".js-cost-input");
+        const calculateButton = document.querySelector(".js-calculate-button");
+        const shippingCost = document.querySelector(".js-shipping-cost");
+
+        if (costInput.value < 40) {
+          const total = Number(costInput.value) + 10;
+          shippingCost.innerHTML = "$" + total.toFixed(2);
+        } else {
+          shippingCost.innerHTML = "$" + costInput.value;
+        }
+      }
+
+      function handleKeydown(event) {
+        if (event.key === "Enter") {
+          calculateShipping(), verifyInput();
+        }
+      }
+
+      function verifyInput() {
+        const costInput = document.querySelector(".js-cost-input");
+        const shippingCost = document.querySelector(".js-shipping-cost");
+        if (costInput.value === "" || costInput.value <= 0) {
+          shippingCost.innerHTML = "Please enter a value";
+        }
+      }
+    </script>
+  </body>
+</html>
