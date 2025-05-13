@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Cart Quantity</title>
@@ -97,16 +97,16 @@
 
     <script>
       let cartQuantity = 0;
-      const cartQuantityElement = document.querySelector(".cart-quantity");
+      const cartQuantityElement = document.querySelector('.cart-quantity');
 
       function updateCartQuantity(quantity) {
         if (cartQuantity + quantity >= 11) {
-          alert("The cart is full");
+          alert('The cart is full');
           return;
         }
 
         if (cartQuantity + quantity < 0) {
-          alert("Not enough items in the cart");
+          alert('Not enough items in the cart');
           return;
         }
 
