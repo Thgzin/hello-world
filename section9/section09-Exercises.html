@@ -6,11 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <button>9a</button>
-    <button class="btn-9b">9b</button>
+  <button class="heads-btn" >heads</button>
+  <button class="tails-btn">tails</button>
+  <p class="result"></p>
     <script>
-        document.querySelector('button')
-        const btn9b = document.querySelector('.btn-9b')
-        btn9b.innerHTML = '9b done!'
+      const heads = document.querySelector('.heads-btn')
+      const tails = document.querySelector('.tails-btn')
+      const result = document.querySelector('.result')
+
+        
+    heads.addEventListener('click', function(){
+        result.innerHTML = `You choose: ${heads.innerHTML}`
+    })
+    
+
+    tails.addEventListener('click', function(){
+   result.innerHTML = `You choose: ${tails.innerHTML}`
+    })
+    
     </script>
 </html>
