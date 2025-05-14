@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .buttonStyle {
+        background-color: rgb(51 51 51);
+        border: none;
+        padding: 15px 25px;
+        margin-right: 10px;
+        border-radius: 60px;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+      }
+      .operatorStyle {
+        background-color: rgb(254, 160, 10);
+        border: none;
+        padding: 15px 25px;
+        margin-right: 10px;
+        border-radius: 60px;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+      }
+      .result-text {
+        color: white;
+        font-size: 2.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Code changes are at the bottom. -->
+    <p class="calculation-result result-text"></p>
+    <p>
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('1');
+      "
+      >
+        1
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('2');
+      "
+      >
+        2
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('3');
+      "
+      >
+        3
+      </button>
+
+      <button
+        class="operatorStyle"
+        onclick="
+        updateCalculation(' + ');
+      "
+      >
+        +
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('4');
+      "
+      >
+        4
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('5');
+      "
+      >
+        5
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('6');
+      "
+      >
+        6
+      </button>
+
+      <button
+        class="operatorStyle"
+        onclick="
+        updateCalculation(' - ');
+      "
+      >
+        -
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('7');
+      "
+      >
+        7
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('8');
+      "
+      >
+        8
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('9');
+      "
+      >
+        9
+      </button>
+
+      <button
+        class="operatorStyle"
+        onclick="
+        updateCalculation(' * ');
+      "
+      >
+        *
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('0');
+      "
+      >
+        0
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        updateCalculation('.');
+      "
+      >
+        .
+      </button>
+
+      <button
+        class="buttonStyle"
+        onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        console.log(calculation);
+        calculationResult.innerHTML = calculation
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      "
+      >
+        =
+      </button>
+
+      <button
+        class="operatorStyle"
+        onclick="
+        updateCalculation(' / ');
+      "
+      >
+        /
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="buttonStyle"
+        onclick="
+        calculation = '';
+        console.log(calculation);
+        calculationResult.innerHTML = calculation
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      "
+      >
+        Clear
+      </button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+      const calculationResult = document.querySelector(".calculation-result");
+      calculationResult.innerHTML = calculation;
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+        calculationResult.innerHTML = calculation;
+        localStorage.setItem("calculation", calculation);
+      }
+
+      // Optional: you can also create a function in order
+      // to reuse this code.
+      function saveCalculation() {
+        calculationResult.innerHTML = calculation;
+        localStorage.setItem("calculation", calculation);
+      }
+    </script>
+  </body>
+</html>

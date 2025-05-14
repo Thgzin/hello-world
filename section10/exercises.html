@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+    body {
+      background-color: rgb(56, 52, 52);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <button class="js-button">Test</button>
+    <script>
+      const button = document.querySelector(".js-button");
+
+      if (button.classList.contains("js-button")) {
+        console.log(button);
+      } else {
+        console.log("not found");
+      }
+    </script>
+  </body>
+</html>
