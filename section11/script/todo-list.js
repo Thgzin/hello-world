@@ -1,6 +1,7 @@
 const todoList = ["make dinner", "wash dishes", "buy groceries"];
 
 renderTodoList();
+
 function renderTodoList() {
   let todoListHtml = "";
 
