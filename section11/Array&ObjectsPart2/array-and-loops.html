@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* const array = [1, 2, 3];
+            const array2 = array.slice();
+            array2.push(4);
+            console.log(array);
+            console.log(array2);
+            const [firstValue, secondValue] = [1, 2, 3];
+            console.log(firstValue, secondValue);
+      */ /*
+            for (let i = 1; i <= 10; i++) {
+              if (i % 3 === 0) {
+                continue;
+              }
+              console.log(i);
+              if (i === 8) {
+                break;
+              }
+            }
+            */
+      let i = 1;
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+      function doubleArray(nums) {
+        const numsDoubled = [];
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (num === 0) {
+            return numsDoubled;
+          }
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled;
+      }
+      console.log(doubleArray([2, 0, 2, ]));
+    </script>
+  </body>
+</html>
