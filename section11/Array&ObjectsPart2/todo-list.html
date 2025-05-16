@@ -16,9 +16,11 @@
         onkeydown="pressEnter(event)"
       />
       <input type="date" class="js-dueDate-input due-date-input" />
-      <button class="addBtn" onclick="addTodo()">Add</button>
+      <button class="addBtn" onclick="addTodo(), verifyEmptyInput()">
+        Add
+      </button>
     </div>
-
+    <p class="js-error"></p>
     <div class="js-todo-list todo-grid"></div>
     <script src="script/todo-list.js"></script>
   </body>

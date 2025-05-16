@@ -31,6 +31,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: all 200ms ease-in-out;
+;
 }
 
 .addBtn:hover {
@@ -43,7 +44,7 @@ body {
   grid-template-columns: 200px 150px 100px;
   column-gap: 10px;
   row-gap: 10px;
- align-items: center;
+  align-items: center;
 }
 
 .todo-input-grid {

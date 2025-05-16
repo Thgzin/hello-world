@@ -101,15 +101,15 @@
         return result.reverse();
       }
       const foods = ["egg", "apple", "egg", "egg", "ham"];
-   
+
 
       console.log(removeEgg(foods));
       console.log(foods);
       */
-      for (i = 1; i <= 30; i++) {
+      /* for (i = 1; i <= 30; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
           console.log(`FizzBuzz`);
-          continue
+          continue;
         }
         if (i % 3 === 0) {
           console.log("Fizz");
@@ -122,6 +122,12 @@
 
         console.log(i);
       }
+      */
+
+      function uniqueValues(array) {
+        return [...new Set(array)];
+      }
+      console.log(uniqueValues(["green", "green", "red", "blue", "red"]));
     </script>
   </body>
 </html>
