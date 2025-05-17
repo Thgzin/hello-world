@@ -1,0 +1,64 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.move-icon {
+  height: 50px;
+}
+
+.move-button {
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 10px;
+}
+div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: -15px;
+}
+button {
+  background: none;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+button:hover {
+  border: 1px solid rgb(207, 204, 204);
+}
+#js-result-text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.js-moves-text {
+  font-size: 25px;
+}
+.score {
+  margin-top: 50px;
+  font-size: 25px;
+}
+.reset-score-button,
+.auto-play-button {
+  margin-top: 15px;
+  font-size: 25px;
+  padding: 8px 15px;
+}
