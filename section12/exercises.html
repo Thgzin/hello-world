@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <!--<button class="btn-js" onclick="addCart()">Add to cart</button>
+    <p class="result"></p -->
+    <button class="add-btn" onclick="addMessage()">Add</button>
+    <button class="remove-btn" onclick="removeMessage()" messageZero()>
+      Remove
+    </button>
+    <script>
+      /* const add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+        runTwice(add);
+
+      runTwice(function () {
+        console.log("12b");
+      });
+
+      function changeName() {
+        const button = document.querySelector(".btn-js");
+
+        setTimeout(() => {
+          button.innerText = "Loading...";
+        }, 100);
+
+        setInterval(() => {
+          button.innerText = "Finished";
+        }, 2000);
+      }
+
+
+      function addCart() {
+        const button = document.querySelector(".btn-js");
+        const result = document.querySelector(".result");
+        let isClicked = false;
+        let intervalId;
+
+        if (!isClicked) {
+          intervalId = setInterval(() => {
+            result.innerText = "Added";
+            isClicked = true;
+          }, 50);
+        } else {
+          isClicked = false;
+        }
+
+        setTimeout(() => {
+          isClicked = true;
+          clearInterval(intervalId);
+          result.innerText = "";
+        }, 2000);
+      }
+         */
+
+      let messages = 2;
+      const addBtn = document.querySelector(".addBtn");
+      const removeBtn = document.querySelector(".removeBtn");
+
+      setInterval(() => {
+        verifyMessageIsEmpty();
+        document.title = `${messages} New Messages`;
+      }, 1000);
+
+      setInterval(() => {
+        document.title = "App";
+      }, 1500);
+
+      function addMessage() {
+        setTimeout(() => {
+          messages++;
+          document.title = `${messages} New Messages`;
+        }, 500);
+      }
+
+      function removeMessage() {
+        if (messages <= 0) {
+          document.title = "App";
+          return;
+        }
+        setTimeout(() => {
+          messages--;
+          document.title = `${messages} New Messages`;
+        }, 500);
+      }
+
+      function verifyMessageIsEmpty() {
+        if (messages === 0) {
+          setTimeout(() => {
+            document.title = "App";
+          }, 0);
+        }
+      }
+    </script>
+  </body>
+</html>

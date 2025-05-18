@@ -53,6 +53,9 @@
       */
       ["wash dishes", "make dinner", "watch youtube"].forEach(
         (value, string) => {
+          if (value === "wash dishes") {
+            return;
+          }
           console.log(value, string);
         }
       );
