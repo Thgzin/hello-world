@@ -6,7 +6,9 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 
 updateScoreElement();
 
-function resetScore() {
+const resetButton = document.querySelector(".js-reset-score-button");
+
+resetButton.addEventListener("click", () => {
   (score.wins = 0),
     (score.losses = 0),
     (score.ties = 0),
@@ -15,7 +17,25 @@ function resetScore() {
   updateScoreElement();
   document.querySelector(".js-result").innerHTML = "";
   document.querySelector(".js-moves").innerHTML = "";
-}
+});
+
+const rockButton = document
+  .querySelector(".js-rock-button")
+  .addEventListener("click", () => {
+    playGame("rock");
+  });
+
+const paperButton = document
+  .querySelector(".js-paper-button")
+  .addEventListener("click", () => {
+    playGame("paper");
+  });
+
+const scissorsButton = document
+  .querySelector(".js-scissors-button")
+  .addEventListener("click", () => {
+    playGame("scissors");
+  });
 
 function playGame(playerMove) {
   computerMove = pickComputerMove();
@@ -76,7 +96,10 @@ let intervalId;
 //const autoPlay = ()=>{
 
 //}
-function autoPlay() {
+
+const autoPlayButton = document.querySelector(".js-auto-play-button");
+
+autoPlayButton.addEventListener("click", () => {
   if (!isAutoPlay) {
     intervalId = setInterval(() => {
       const computerMove = pickComputerMove();
@@ -87,7 +110,7 @@ function autoPlay() {
     clearInterval(intervalId);
     isAutoPlay = false;
   }
-}
+});
 
 function updateScoreElement() {
   document.querySelector(
