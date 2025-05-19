@@ -6,10 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <p>4dsa51fsaf55dsas5</p>
-    <img src="images/paper-emoji.png" alt="" srcset="" />
-    <img src="images/rock-emoji.png" alt="" />
+    <button onclick="" class="js-button">Click</button>
+
     <script>
+      const buttonElement = document.querySelector(".js-button");
+
+      const eventListner = () => {
+        console.log("clicked");
+      };
+      buttonElement.addEventListener("click", eventListner);
+
+      buttonElement.removeEventListener("click", eventListner);
+
+      buttonElement.addEventListener("click", () => {
+        console.log("clicked2");
+      });
+
       /*function greeting() {
         console.log("hello");
       }
@@ -50,7 +62,7 @@
       setInterval(function () {
         console.log("interval");
       }, 3000);
-      */
+    
       ["wash dishes", "make dinner", "watch youtube"].forEach(
         (value, string) => {
           if (value === "wash dishes") {
@@ -59,6 +71,14 @@
           console.log(value, string);
         }
       );
+
+      const object2 = {
+        method: () => {},
+        method(){
+
+        }
+      };
+        */
     </script>
   </body>
 </html>

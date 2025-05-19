@@ -73,7 +73,9 @@ function pickComputerMove() {
 
 let isAutoPlay = false;
 let intervalId;
+//const autoPlay = ()=>{
 
+//}
 function autoPlay() {
   if (!isAutoPlay) {
     intervalId = setInterval(() => {
@@ -100,7 +102,7 @@ function updateResult(result) {
 function updateMove(playerMove, computerMove) {
   document.querySelector(
     ".js-moves"
-  ).innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon" />
-    <img src="images/${computerMove}-emoji.png" class="move-icon" />Computer
+  ).innerHTML = `You <img src="../images/${playerMove}-emoji.png" class="move-icon" />
+    <img src="../images/${computerMove}-emoji.png" class="move-icon" />Computer
   </p>`;
 }
