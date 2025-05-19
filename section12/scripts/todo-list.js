@@ -25,6 +25,7 @@ function renderTodoList() {
         saveStorage();
       });
     });
+    
 }
 
 document.querySelector(".js-add-todo-button").addEventListener("click", () => {
