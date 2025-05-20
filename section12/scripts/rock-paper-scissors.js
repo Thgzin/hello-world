@@ -6,17 +6,44 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 
 updateScoreElement();
 
+function displayMessage(message) {
+  const messageElement = document.createElement("p");
+  messageElement.innerHTML = message;
+}
+
 const resetButton = document.querySelector(".js-reset-score-button");
 
 resetButton.addEventListener("click", () => {
-  (score.wins = 0),
-    (score.losses = 0),
-    (score.ties = 0),
-    localStorage.removeItem("score");
+  const resetText = document.querySelector(".js-reset-text");
+  resetText.innerHTML = "Are you sure want to reset?";
+  const buttonYes = document.createElement("button");
+  buttonYes.textContent = "Yes";
+  buttonYes.id = "yes-button";
+  resetText.appendChild(buttonYes);
 
-  updateScoreElement();
-  document.querySelector(".js-result").innerHTML = "";
-  document.querySelector(".js-moves").innerHTML = "";
+  const buttonNo = document.createElement("button");
+  buttonNo.textContent = "No";
+  buttonNo.id = "no-button";
+  resetText.appendChild(buttonNo);
+
+  buttonYes.addEventListener("click", () => {
+    (score.wins = 0),
+      (score.losses = 0),
+      (score.ties = 0),
+      localStorage.removeItem("score");
+
+    updateScoreElement();
+    resetText.innerHTML = "";
+    clearInterval(intervalId);
+    autoPlayButton.innerHTML = "Auto Play";
+    isAutoPlay = false;
+    document.querySelector(".js-result").innerHTML = "";
+    document.querySelector(".js-moves").innerHTML = "";
+  });
+
+  buttonNo.addEventListener("click", () => {
+    resetText.innerHTML = "";
+  });
 });
 
 const rockButton = document
@@ -44,6 +71,11 @@ document.body.addEventListener("keydown", (event) => {
     playGame("paper");
   } else if (event.key === "s") {
     playGame("scissors");
+  } else if (event.key === "a") {
+    autoPlayButton.click();
+  } else if (event.key === "Backspace") {
+    resetButton.click();
+    autoPlayButton.click();
   }
 });
 
@@ -116,9 +148,11 @@ autoPlayButton.addEventListener("click", () => {
       playGame(computerMove);
     }, 1000);
     isAutoPlay = true;
+    autoPlayButton.innerHTML = "Stop playing";
   } else {
     clearInterval(intervalId);
     isAutoPlay = false;
+    autoPlayButton.innerHTML = "Auto Play";
   }
 });
 

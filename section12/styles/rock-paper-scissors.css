@@ -62,3 +62,37 @@ button:hover {
   font-size: 25px;
   padding: 8px 15px;
 }
+
+.score,
+.js-reset-text {
+  display: flex;
+  align-items: center;
+}
+
+.js-reset-text,
+#yes-button,
+#no-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+#yes-button {
+  background: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+#no-button {
+  background: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
