@@ -1,138 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM projects</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
 
-      .subscribe-button {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 0.7rem;
-        border-radius: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 300ms linear;
-        margin-bottom: 30px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM projects</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-      .isSubscribed {
-        background-color: rgb(152, 151, 151);
-        color: black;
-      }
+    .subscribe-button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 300ms linear;
+      margin-bottom: 30px;
+    }
 
-      .calculate-button {
-        margin-top: 10px;
-      }
-      .calculate-button {
-        background: linear-gradient(
-          0deg,
+    .isSubscribed {
+      background-color: rgb(152, 151, 151);
+      color: black;
+    }
+
+    .calculate-button {
+      margin-top: 10px;
+    }
+
+    .calculate-button {
+      background: linear-gradient(0deg,
           rgba(72, 195, 34, 1) 0%,
-          rgba(45, 253, 146, 0.53) 100%
-        );
+          rgba(45, 253, 146, 0.53) 100%);
 
-        color: white;
-        border: none;
-        padding: 0.6rem;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        margin-bottom: 30px;
-        margin-top: 10px;
-        font-size: 15px;
-        margin-left: 5px;
-      }
+      color: white;
+      border: none;
+      padding: 0.6rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      font-size: 15px;
+      margin-left: 5px;
+    }
 
-      .cost-order {
-        padding: 0.5rem;
-        border-radius: 5px;
-        font-size: 15px;
+    .cost-order {
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
       }
-      @media (max-width: 768px) {
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <p>Youtube Subscribe Button</p>
-    <button
-      class="js-subscribe-button subscribe-button"
-      onclick="toggleSubscribeButton()"
-    >
-      Subscribe
+    }
+  </style>
+</head>
+
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subscribe-button subscribe-button" onclick="toggleSubscribeButton()">
+    Subscribe
+  </button>
+  <p>Amazon Shipping Calculator</p>
+  <p>Order under $40 = $10 shipping</p>
+  <p>Order over $40 = FREE shipping</p>
+  <div class="cost-button">
+    <input type="number" placeholder="Cost of order" class="js-cost-input cost-order"
+      onkeydown="handleKeydown(event)" />
+
+    <button class="js-calculate-button calculate-button" onclick="calculateShipping(), verifyInput()">
+      Calculate
     </button>
-    <p>Amazon Shipping Calculator</p>
-    <p>Order under $40 = $10 shipping</p>
-    <p>Order over $40 = FREE shipping</p>
-    <div class="cost-button">
-      <input
-        type="number"
-        placeholder="Cost of order"
-        class="js-cost-input cost-order"
-        onkeydown="handleKeydown(event)"
-      />
+  </div>
+  <p class="js-shipping-cost"></p>
 
-      <button
-        class="js-calculate-button calculate-button"
-        onclick="calculateShipping(), verifyInput()"
-      >
-        Calculate
-      </button>
-    </div>
-    <p class="js-shipping-cost"></p>
+  <script>
+    function calculateShipping() {
+      const costInput = document.querySelector(".js-cost-input");
+      const calculateButton = document.querySelector(".js-calculate-button");
+      const shippingCost = document.querySelector(".js-shipping-cost");
 
-    <script>
-      function calculateShipping() {
-        const costInput = document.querySelector(".js-cost-input");
-        const calculateButton = document.querySelector(".js-calculate-button");
-        const shippingCost = document.querySelector(".js-shipping-cost");
-
-        if (costInput.value < 40) {
-          const total = Number(costInput.value) + 10;
-          shippingCost.innerHTML = "$" + total.toFixed(2);
-        } else {
-          shippingCost.innerHTML = "$" + costInput.value;
-        }
+      if (costInput.value < 40) {
+        const total = Number(costInput.value) + 10;
+        shippingCost.innerHTML = "$" + total.toFixed(2);
+      } else {
+        shippingCost.innerHTML = "$" + costInput.value;
       }
+    }
 
-      function handleKeydown(event) {
-        if (event.key === "Enter") {
-          calculateShipping(), verifyInput();
-        }
+    function handleKeydown(event) {
+      if (event.key === "Enter") {
+        calculateShipping(), verifyInput();
       }
+    }
 
-      function verifyInput() {
-        const costInput = document.querySelector(".js-cost-input");
-        const shippingCost = document.querySelector(".js-shipping-cost");
-        if (costInput.value === "" || costInput.value <= 0) {
-          shippingCost.innerHTML = "Please enter a value";
-        }
+    function verifyInput() {
+      const costInput = document.querySelector(".js-cost-input");
+      const shippingCost = document.querySelector(".js-shipping-cost");
+      if (costInput.value === "" || costInput.value <= 0) {
+        shippingCost.innerHTML = "Please enter a value";
       }
-      function toggleSubscribeButton() {
-        const buttonElement = document.querySelector(".js-subscribe-button");
-        if (buttonElement.innerText === "Subscribe") {
-          buttonElement.innerHTML = "Subscribed";
-          buttonElement.classList.add("isSubscribed");
-        } else {
-          buttonElement.innerHTML = "Subscribe";
-          buttonElement.classList.remove("isSubscribed");
-        }
+    }
+    function toggleSubscribeButton() {
+      const buttonElement = document.querySelector(".js-subscribe-button");
+      if (buttonElement.innerText === "Subscribe") {
+        buttonElement.innerHTML = "Subscribed";
+        buttonElement.classList.add("isSubscribed");
+      } else {
+        buttonElement.innerHTML = "Subscribe";
+        buttonElement.classList.remove("isSubscribed");
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
